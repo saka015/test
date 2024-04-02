@@ -49,29 +49,57 @@ li:hover {
   display: none;
 }
 
-.btn{
+.btn {
   text-align: center;
   align-items: center;
-  margin-top: 40vh;
-  margin-left: 10em;
+  margin-top: 30vh;
+  margin-left: 4em;
   border: none;
   background-color: rgb(196, 196, 226);
   cursor: pointer;
-  font-size: ;
   position: absolute;
   padding: 15px 2px;
 }
 
-.btn:hover{
+.btn:hover {
   background-color: #fff;
 }
 
-.bottom-bar{
+.bottom-bar {
   position: fixed;
+  padding-top: 5px;
   bottom: 0;
   height: 160px;
   background-color: rgb(225, 225, 238);
   width: 100%;
-  /* margin-left: 250px; */
+  margin-left: 250px;
+  /* padding-left: 250px; */
   text-align: center;
+  overflow: scroll;
+}
+.icon {
+  cursor: pointer;
+}
+
+.all-boxes {
+  margin-top: 20px;
+  display: flex;
+}
+
+.box {
+  width: 200px;
+  height: 100px;
+  background-color: #fff;
+  margin-right: 5px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.goDown {
+  transform: translateY(120px);
+  transition: all 0.3s;
 }

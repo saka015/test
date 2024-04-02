@@ -1,34 +1,52 @@
-import { useState } from "react";
+import  { useState } from "react";
+import { IoIosArrowBack } from "react-icons/io";
 
 const Sidebar = () => {
   const [showSidebar, setShowSidebar] = useState(true);
+  const [selectedContent, setSelectedContent] = useState("home");
 
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
   };
+
+  const handleContentChange = (content) => {
+    setSelectedContent(content);
+    setShowSidebar(true); // Show sidebar when content changes
+  };
+
+  const getContent = () => {
+    switch (selectedContent) {
+      case "home":
+        return <div>Home content goes here.</div>;
+      case "contact":
+        return <div>Contact content goes here.</div>;
+      case "about":
+        return <div>About content goes here.</div>;
+      case "address":
+        return <div>Address content goes here.</div>;
+      case "rules":
+        return <div>Rules content goes here.</div>;
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className="sidebar">
       <div>
         <ul>
-          <li onClick={toggleSidebar}>home</li>
-          <li onClick={toggleSidebar}>home</li>
-          <li onClick={toggleSidebar}>home</li>
-          <li onClick={toggleSidebar}>home</li>
-          <li onClick={toggleSidebar}>home</li>
-         
+          <li onClick={() => handleContentChange("home")}>home</li>
+          <li onClick={() => handleContentChange("contact")}>contact</li>
+          <li onClick={() => handleContentChange("about")}>about</li>
+          <li onClick={() => handleContentChange("address")}>address</li>
+          <li onClick={() => handleContentChange("rules")}>rules</li>
         </ul>
       </div>
       <div className={`sidebar-right  ${showSidebar ? "block" : "hidden"}`}>
         <button onClick={toggleSidebar} className="btn">
-          {" "}
-          {"<"}{" "}
+          <IoIosArrowBack />
         </button>
-        unt deleniti nihil amet consectetur quia? Animi rerum consequuntur
-        distinctio? Placeat voluptatibus sapiente minima enim possimus hic,
-        eaque commodi ipsum est dicta accusantium. Ullam, a maiores perspiciatis
-        quos dolores odio distinctio ex sed! Modi quasi facilis voluptate
-        placeat maiores. Nobis numquam, aliquam nulla fuga aut placeat eligendi
-        quasi, iste eos explicabo blanditiis enim magnam corporis in commodi?
+        {getContent()}
       </div>
     </div>
   );
