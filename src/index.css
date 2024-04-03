@@ -103,3 +103,24 @@ li:hover {
   transform: translateY(120px);
   transition: all 0.3s;
 }
+
+.home {
+  position: absolute;
+  margin-left: 400px;
+  margin-top: 10px;
+  width: 1050px;
+  min-height: 65vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-child {
+  width: 600px;
+  min-height: 45vh;
+  background-color: rgb(185, 182, 182);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
